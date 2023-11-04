@@ -1,10 +1,13 @@
 // @ts-nocheck
 
+import { Outlet } from "react-router-dom";
+import MainLayout from "./Components/Layout/MainLayout";
+
 function App() {
   return (
-    <>
-      <h1>Welcome to TasteHarmony Cafe</h1>
-    </>
+    <MainLayout>
+      <Outlet></Outlet>
+    </MainLayout>
   );
 }
 
