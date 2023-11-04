@@ -1,8 +1,20 @@
 // @ts-nocheck
-
+import useAuth from "../../Hooks/useAuth";
+import toast from "react-hot-toast";
 import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  const { currentUser, logOut } = useAuth();
+  console.log(currentUser);
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        toast.success("Successfully Logged Out");
+      })
+      .catch(() => {
+        toast.error("Logout Action Failed");
+      });
+  };
   return (
     <div className="w-full max-w-[1250px] px-[25px] mx-auto">
       <div className="flex-none lg:hidden">
@@ -65,12 +77,12 @@ const Navbar = () => {
             Blogs
           </NavLink>
 
-          {/* {user?.email ? (
+          {currentUser?.email ? (
             <div className="dropdown dropdown-end ">
               <label tabIndex={0} className="cursor-pointer">
                 <div className="avatar">
                   <div className="w-10 rounded-full">
-                    <img src="https://i.ibb.co/bLrMRXp/user.png" />
+                    <img src={currentUser.photoURL} />
                   </div>
                 </div>
               </label>
@@ -98,7 +110,7 @@ const Navbar = () => {
                 </NavLink>
 
                 <div
-                  onClick={logout}
+                  onClick={handleLogOut}
                   className="cursor-pointer text-red-500 px-4 py-2 hover:bg-base-300 rounded-lg"
                 >
                   Logout
@@ -109,12 +121,12 @@ const Navbar = () => {
             <NavLink
               to="/login"
               className={({ isActive }) =>
-                isActive ? "btn btn-primary btn-sm" : "btn btn-ghost btn-sm"
+                isActive ? "btn bg-[#C59D5F] btn-sm" : "btn btn-ghost btn-sm"
               }
             >
               Login
             </NavLink>
-          )} */}
+          )}
         </div>
       </div>
     </div>

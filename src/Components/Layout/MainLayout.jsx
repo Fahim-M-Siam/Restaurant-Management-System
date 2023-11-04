@@ -33,7 +33,7 @@ const MainLayout = ({ children }) => {
 };
 
 MainLayout.propTypes = {
-  children: propTypes.mode,
+  children: propTypes.node,
 };
 
 export default MainLayout;

@@ -1,4 +1,5 @@
 // @ts-nocheck
+import { Toaster } from "react-hot-toast";
 import About from "../Components/About/About";
 import Banner from "../Components/Banner/Banner";
 import Rating from "../Components/Rating/Rating";
@@ -15,6 +16,7 @@ const Home = () => {
       </Container>
       <Rating></Rating>
       <About></About>
+      <Toaster />
     </div>
   );
 };
