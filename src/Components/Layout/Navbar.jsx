@@ -5,7 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const { currentUser, logOut } = useAuth();
-  console.log(currentUser);
+
   const handleLogOut = () => {
     logOut()
       .then(() => {
@@ -118,14 +118,24 @@ const Navbar = () => {
               </div>
             </div>
           ) : (
-            <NavLink
-              to="/login"
-              className={({ isActive }) =>
-                isActive ? "btn bg-[#C59D5F] btn-sm" : "btn btn-ghost btn-sm"
-              }
-            >
-              Login
-            </NavLink>
+            <>
+              <NavLink
+                to="/login"
+                className={({ isActive }) =>
+                  isActive ? "btn bg-[#C59D5F] btn-sm" : "btn btn-ghost btn-sm"
+                }
+              >
+                Login
+              </NavLink>
+              <div className="avatar">
+                <div className="w-10 rounded-full">
+                  <img
+                    src="https://i.ibb.co/bLrMRXp/user.png"
+                    alt="User Avatar"
+                  />
+                </div>
+              </div>
+            </>
           )}
         </div>
       </div>
