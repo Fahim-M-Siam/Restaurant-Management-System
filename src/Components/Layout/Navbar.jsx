@@ -64,7 +64,7 @@ const Navbar = () => {
                 : "btn btn-ghost btn-sm"
             }
           >
-            All-Food-Items
+            Foods
           </NavLink>
           <NavLink
             to="/blog"
@@ -94,19 +94,19 @@ const Navbar = () => {
                   to="/user/addedfooditems"
                   className="px-4 py-2 hover:bg-base-300 rounded-lg"
                 >
-                  My-added-food-items
+                  My Foods
                 </NavLink>
                 <NavLink
-                  to="/user/addfooditems"
+                  to="/user/addfood"
                   className="px-4 py-2 hover:bg-base-300 rounded-lg"
                 >
-                  Add a food item
+                  Add Food
                 </NavLink>
                 <NavLink
-                  to="/user/orderedfooditems"
+                  to="/user/orders"
                   className="px-4 py-2 hover:bg-base-300 rounded-lg"
                 >
-                  My ordered food items
+                  Orders
                 </NavLink>
 
                 <div
