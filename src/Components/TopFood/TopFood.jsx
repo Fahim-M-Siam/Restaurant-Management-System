@@ -1,6 +1,7 @@
 // @ts-nocheck
 import { Link } from "react-router-dom";
 import Container from "../UI/Container";
+import TopFoodCard from "./TopFoodCard";
 
 // @ts-nocheck
 const TopFood = () => {
@@ -8,6 +9,9 @@ const TopFood = () => {
     <Container>
       <div className="text-3xl text-center font-extrabold my-20">
         <h2>Top Foods</h2>
+      </div>
+      <div>
+        <TopFoodCard></TopFoodCard>
       </div>
       <div className="text-center my-16">
         <Link to="/allfooditems">
