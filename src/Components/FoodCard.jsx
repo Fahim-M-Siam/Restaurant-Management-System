@@ -9,7 +9,7 @@ const FoodCard = () => {
           alt="Shoes"
         />
       </figure>
-      <div className="card-body items-center text-center space-y-5">
+      <div className="card-body items-center text-center space-y-4">
         <h2 className="card-title">
           Steak
           <div className="badge badge-secondary">Heavy Meal</div>

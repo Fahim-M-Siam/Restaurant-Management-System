@@ -16,8 +16,10 @@ const MyFoodCard = () => {
         </h2>
         <p>If a dog chews shoes whose shoes does he choose?</p>
         <p className="font-medium">$450.00</p>
-        <div className="card-actions justify-start pt-5">
-          <div className="badge badge-outline">Update</div>
+        <div className="card-actions justify-start pt-4">
+          <div className="btn btn-sm btn-outline bg-[#C59D5F] text-white">
+            Update
+          </div>
         </div>
       </div>
     </div>

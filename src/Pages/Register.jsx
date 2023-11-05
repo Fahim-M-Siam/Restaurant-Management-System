@@ -8,6 +8,7 @@ import { updateProfile } from "firebase/auth";
 import SocialLogin from "../Components/SocialLogin/SocialLogin";
 import useAuth from "../Hooks/useAuth";
 import Lottie from "lottie-react";
+import axios from "axios";
 const Register = () => {
   const { createUser, logOut } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
@@ -20,6 +21,8 @@ const Register = () => {
     const email = form.email.value;
     const img = form.img.value;
     const password = form.password.value;
+
+    const user = { name, email, img, password };
 
     // validations
     if (password.length < 6) {
@@ -50,6 +53,16 @@ const Register = () => {
       .catch((error) => {
         toast.error("Registration failed", { id: toastId });
         console.log(error);
+      });
+
+    // sendin user information to backend
+    axios
+      .post("http://localhost:5000/users", user)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
       });
   };
   return (
