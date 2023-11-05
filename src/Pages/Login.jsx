@@ -16,6 +16,7 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const handleLogin = (event) => {
     event.preventDefault();
+    const toastId = toast.loading("Logging In..");
     const form = event.target;
     // inputvalues
     const email = form.email.value;
@@ -24,7 +25,7 @@ const Login = () => {
     // signIn
     signIn(email, password)
       .then(() => {
-        toast.success("Successfully Logged In");
+        toast.success("Successfully Logged In", { id: toastId });
 
         // navigate after login
         navigate(location?.state ? location.state : "/");
@@ -35,7 +36,7 @@ const Login = () => {
 
         // validations
         if (errorCode === "auth/invalid-login-credentials") {
-          toast.error("Invalid Login Credential");
+          toast.error("Invalid Login Credential", { id: toastId });
         } else {
           console.error(errorMessage);
         }

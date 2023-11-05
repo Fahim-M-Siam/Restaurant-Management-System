@@ -3,7 +3,6 @@ import propTypes from "prop-types";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Sidebar from "./Sidebar";
-import { Toaster } from "react-hot-toast";
 
 const MainLayout = ({ children }) => {
   return (
@@ -17,7 +16,6 @@ const MainLayout = ({ children }) => {
         {/* Page content here */}
         {children}
         <Footer />
-        <Toaster />
       </div>
       <div className="drawer-side">
         <label

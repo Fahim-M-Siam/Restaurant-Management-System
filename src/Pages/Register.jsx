@@ -13,6 +13,7 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const handleSubmit = (event) => {
     event.preventDefault();
+    const toastId = toast.loading("Registering..");
     const form = event.target;
     // inputvalues
     const name = form.name.value;
@@ -35,7 +36,7 @@ const Register = () => {
     // creatingUser
     createUser(email, password)
       .then((currentUser) => {
-        toast.success("Registration has been succesful");
+        toast.success("Registration has been succesful", { id: toastId });
         logOut();
         // update profile
         updateProfile(currentUser.user, {
@@ -47,7 +48,7 @@ const Register = () => {
         console.log(currentUser.user);
       })
       .catch((error) => {
-        toast.error("Registration failed");
+        toast.error("Registration failed", { id: toastId });
         console.log(error);
       });
   };
