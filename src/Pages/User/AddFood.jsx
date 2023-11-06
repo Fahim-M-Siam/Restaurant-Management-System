@@ -3,18 +3,21 @@
 import Lottie from "lottie-react";
 import addFoodItemAnimation from "../../assets/addFoodItemAnimation.json";
 import useAuth from "../../Hooks/useAuth";
+import toast from "react-hot-toast";
+import axios from "axios";
 
 // @ts-nocheck
 const AddFood = () => {
   const { currentUser } = useAuth();
   const handleAddFood = (event) => {
     event.preventDefault();
+    const toastId = toast.loading("Processing..");
     const form = event.target;
     // inputvalues
     const foodName = form.foodName.value;
     const image = form.image.value;
     const category = form.category.value.toLowerCase();
-    const quantity = form.quantity.value;
+    const quantity = parseInt(form.quantity.value);
     const price = form.price.value;
     const userName = form.userName.value.toLowerCase();
     const userEmail = form.userEmail.value.toLowerCase();
@@ -30,9 +33,25 @@ const AddFood = () => {
       userName,
       userEmail,
       country,
+      count: 0,
       description,
     };
     console.log(newFoodItem);
+
+    axios
+      .post("http://localhost:5000/addfood", newFoodItem)
+      .then((response) => {
+        const data = response.data;
+        console.log(data);
+        if (data.insertedId) {
+          toast.success("Successfully Added the Food Item", { id: toastId });
+        } else {
+          toast.error(data.message, { id: toastId });
+        }
+      })
+      .catch((error) => {
+        console.error("Error adding food item:", error, { id: toastId });
+      });
   };
 
   return (
