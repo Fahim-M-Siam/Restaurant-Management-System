@@ -48,7 +48,6 @@ const Register = () => {
         }).then(() => {
           toast.success("Profile Updated");
         });
-        console.log(currentUser.user);
       })
       .catch((error) => {
         toast.error("Registration failed", { id: toastId });

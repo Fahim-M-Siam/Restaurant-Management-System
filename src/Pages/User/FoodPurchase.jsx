@@ -6,8 +6,6 @@ import useAuth from "../../Hooks/useAuth";
 
 const FoodPurchase = () => {
   const { currentUser } = useAuth();
-  console.log(currentUser?.metadata?.lastSignInTime);
-  //   const lastSignInTime = currentUser.metadata.lastSignInTime;
 
   const handleorderFood = (event) => {
     event.preventDefault();

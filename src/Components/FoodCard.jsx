@@ -1,5 +1,6 @@
 // @ts-nocheck
 import propTypes from "prop-types";
+import { Link } from "react-router-dom";
 const FoodCard = ({ foodItem }) => {
   const { foodName, image, category, quantity, price } = foodItem;
   return (
@@ -14,9 +15,11 @@ const FoodCard = ({ foodItem }) => {
         <div className="card-actions justify-start">
           <div className="badge badge-outline">Available {quantity}</div>
         </div>
-        <button className="btn btn-outline bg-[#C59D5F] btn-sm text-white">
-          Details
-        </button>
+        <Link to={`/food/${foodName}`}>
+          <button className="btn btn-outline bg-[#C59D5F] btn-sm text-white">
+            Details
+          </button>
+        </Link>
       </div>
     </div>
   );
