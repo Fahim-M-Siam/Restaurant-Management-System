@@ -3,6 +3,8 @@
 import Lottie from "lottie-react";
 import orderAnimation from "../../assets/orderAnimation.json";
 import useAuth from "../../Hooks/useAuth";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const FoodPurchase = () => {
   const { currentUser } = useAuth();
@@ -16,7 +18,7 @@ const FoodPurchase = () => {
     const quantity = form.quantity.value;
     const buyerName = form.buyerName.value.toLowerCase();
     const buyerEmail = form.buyerEmail.value;
-    const buyingDate = form.buyingDate.value;
+    const buyingDate = new Date();
 
     const orderedFood = {
       foodName,
@@ -27,6 +29,27 @@ const FoodPurchase = () => {
       buyingDate,
     };
     console.log(orderedFood);
+
+    axios
+      .post("http://localhost:5000/orderItems", orderedFood)
+      .then((data) => {
+        console.log(data?.data?.acknowledged);
+        if (data?.data?.acknowledged) {
+          toast.success("Successfully Added the Food Item");
+        } else {
+          toast.error(data?.data?.message);
+        }
+      })
+      .catch((error) => console.log(error?.message));
+    axios
+      .put("http://localhost:5000/orderItem", orderedFood)
+      .then((data) => {
+        console.log(data);
+        if (data?.data?.modifiedCount > 0) {
+          toast.success("Modified");
+        }
+      })
+      .catch((error) => console.log(error?.message));
   };
   return (
     <div className="hero min-h-screen bg-[url('https://i.ibb.co/k5HhTJ3/addFood.jpg')]">
@@ -105,20 +128,11 @@ const FoodPurchase = () => {
                 readOnly
               />
             </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text text-white">Buying Date</span>
-              </label>
-              <input
-                type="text"
-                name="buyingDate"
-                value={currentUser}
-                className="input input-bordered"
-                readOnly
-              />
-            </div>
             <div className="form-control mt-6">
-              <button type="submit" className="btn btn-outline bg-[#C59D5F]">
+              <button
+                type="submit"
+                className="btn btn-outline bg-[#C59D5F] text-white"
+              >
                 Order
               </button>
             </div>
