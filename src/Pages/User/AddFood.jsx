@@ -1,5 +1,4 @@
 // @ts-nocheck
-// import toast from "react-hot-toast";
 import Lottie from "lottie-react";
 import addFoodItemAnimation from "../../assets/addFoodItemAnimation.json";
 import useAuth from "../../Hooks/useAuth";
@@ -14,14 +13,15 @@ const AddFood = () => {
     const toastId = toast.loading("Processing..");
     const form = event.target;
     // inputvalues
-    const foodName = form.foodName.value;
+    const foodName = form.foodName.value.toLowerCase();
     const image = form.image.value;
     const category = form.category.value.toLowerCase();
     const quantity = parseInt(form.quantity.value);
-    const price = form.price.value;
+    const price = parseInt(form.price.value);
     const userName = form.userName.value.toLowerCase();
     const userEmail = form.userEmail.value.toLowerCase();
     const country = form.country.value;
+    const shortDescription = form.shortDescription.value;
     const description = form.description.value;
 
     const newFoodItem = {
@@ -34,15 +34,14 @@ const AddFood = () => {
       userEmail,
       country,
       count: 0,
+      shortDescription,
       description,
     };
-    console.log(newFoodItem);
 
     axios
-      .post("http://localhost:5000/addfood", newFoodItem)
-      .then((response) => {
-        const data = response.data;
-        console.log(data);
+      .post("http://localhost:5000/addItem", newFoodItem)
+      .then((res) => {
+        const data = res.data;
         if (data.insertedId) {
           toast.success("Successfully Added the Food Item", { id: toastId });
         } else {
@@ -50,7 +49,7 @@ const AddFood = () => {
         }
       })
       .catch((error) => {
-        console.error("Error adding food item:", error, { id: toastId });
+        console.log("Error adding food item:", error, { id: toastId });
       });
   };
 
@@ -175,12 +174,24 @@ const AddFood = () => {
             </div>
             <div className="form-control">
               <label className="label">
+                <span className="label-text text-white">Short Description</span>
+              </label>
+              <input
+                type="text"
+                name="shortDescription"
+                placeholder="Short Description"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
                 <span className="label-text text-white">Description</span>
               </label>
               <input
                 type="text"
                 name="description"
-                placeholder="Short Description"
+                placeholder="Description"
                 className="input input-bordered"
                 required
               />

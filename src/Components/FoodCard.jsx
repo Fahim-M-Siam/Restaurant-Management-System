@@ -1,23 +1,18 @@
 // @ts-nocheck
-const FoodCard = () => {
+import propTypes from "prop-types";
+const FoodCard = ({ foodItem }) => {
+  const { foodName, image, category, quantity, price } = foodItem;
   return (
-    <div className="w-72 h-[500px] bg-base-100 shadow-xl">
+    <div className="w-96 h-[550px] bg-base-100 shadow-xl hover:scale-105 transform transition-transform">
       <figure>
-        <img
-          className="w-full"
-          src="https://i.ibb.co/k5HhTJ3/addFood.jpg"
-          alt="Shoes"
-        />
+        <img className="w-full h-[300px]" src={image} alt="Shoes" />
       </figure>
-      <div className="card-body items-center text-center space-y-4">
-        <h2 className="card-title">
-          Steak
-          <div className="badge badge-secondary">Heavy Meal</div>
-        </h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <p className="font-medium">$450.00</p>
+      <div className="card-body items-center text-center space-y-3">
+        <h2 className="font-extrabold">{foodName}</h2>
+        <p>{category}</p>
+        <p className="font-medium">${price}</p>
         <div className="card-actions justify-start">
-          <div className="badge badge-outline">Quantity</div>
+          <div className="badge badge-outline">Available {quantity}</div>
         </div>
         <button className="btn btn-outline bg-[#C59D5F] btn-sm text-white">
           Details
@@ -25,6 +20,10 @@ const FoodCard = () => {
       </div>
     </div>
   );
+};
+
+FoodCard.propTypes = {
+  foodItem: propTypes.node,
 };
 
 export default FoodCard;
