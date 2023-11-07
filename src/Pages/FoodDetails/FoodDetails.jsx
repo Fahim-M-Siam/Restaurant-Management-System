@@ -1,12 +1,11 @@
 // @ts-nocheck
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
 // @ts-nocheck
 const FoodDetails = () => {
   const foodItems = useLoaderData();
   const { foodName } = useParams();
   const foodItem = foodItems.find((foodItem) => foodItem.foodName === foodName);
-  console.log(foodItem);
   const {
     image,
     category,
@@ -44,9 +43,11 @@ const FoodDetails = () => {
             </p>
             <p className="py-6">{description}</p>
 
-            <button className="btn btn-outline bg-[#C59D5F] text-white">
-              ${price} - Order now
-            </button>
+            <Link to={`/user/FoodOrder/${foodName}`}>
+              <button className="btn btn-outline bg-[#C59D5F] text-white">
+                ${price} - Order now
+              </button>
+            </Link>
           </div>
         </div>
       </div>

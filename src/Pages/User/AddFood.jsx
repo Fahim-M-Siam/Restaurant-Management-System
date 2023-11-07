@@ -39,7 +39,7 @@ const AddFood = () => {
     };
 
     axios
-      .post("http://localhost:5000/addItem", newFoodItem)
+      .post("http://localhost:5000/addFood", newFoodItem)
       .then((res) => {
         const data = res.data;
         if (data.insertedId) {

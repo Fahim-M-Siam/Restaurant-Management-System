@@ -5,9 +5,12 @@ import orderAnimation from "../../assets/orderAnimation.json";
 import useAuth from "../../Hooks/useAuth";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { useLoaderData } from "react-router-dom";
 
 const FoodPurchase = () => {
+  const foodItem = useLoaderData();
   const { currentUser } = useAuth();
+  const { foodName, price } = foodItem;
 
   const handleorderFood = (event) => {
     event.preventDefault();
@@ -75,9 +78,9 @@ const FoodPurchase = () => {
               <input
                 type="text"
                 name="foodName"
-                placeholder="Food Name"
+                defaultValue={foodName}
                 className="input input-bordered"
-                required
+                readOnly
               />
             </div>
             <div className="form-control">
@@ -87,9 +90,9 @@ const FoodPurchase = () => {
               <input
                 type="text"
                 name="price"
-                placeholder="Price"
+                defaultValue={price}
                 className="input input-bordered"
-                required
+                readOnly
               />
             </div>
             <div className="form-control">
