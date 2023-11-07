@@ -1,4 +1,5 @@
 // @ts-nocheck
+import { Helmet } from "react-helmet";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 
 // @ts-nocheck
@@ -19,6 +20,11 @@ const FoodDetails = () => {
 
   return (
     <div className="mt-20 max-w-6xl mx-auto">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{foodName}-Details | TasteHarmony Cafe</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <div className="mt-14 text-start mb-10">
         <h2 className="text-[#0B0B0B] text-[40px] font-semibold">{foodName}</h2>
         <div className="mt-4">

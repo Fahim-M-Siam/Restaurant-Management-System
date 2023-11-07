@@ -4,10 +4,16 @@ import Container from "../Components/UI/Container";
 import blog1Animation from "../assets/blog1Animation.json";
 import blog2Animation from "../assets/blog2Animation.json";
 import blog3Animation from "../assets/blog3Animation.json";
+import { Helmet } from "react-helmet";
 
 const Blog = () => {
   return (
     <Container>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Blog | TasteHarmony Cafe</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <div className="my-20 space-y-24">
         <div className="hero">
           <div className="hero-content flex-col lg:flex-row-reverse">

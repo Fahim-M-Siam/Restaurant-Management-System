@@ -7,6 +7,7 @@ import loginAnimation from "../assets/loginAnimation.json";
 import SocialLogin from "../Components/SocialLogin/SocialLogin";
 import useAuth from "../Hooks/useAuth";
 import Lottie from "lottie-react";
+import { Helmet } from "react-helmet";
 
 // @ts-nocheck
 const Login = () => {
@@ -44,6 +45,11 @@ const Login = () => {
   };
   return (
     <div className="hero min-h-screen bg-orange-50">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Login | TasteHarmony Cafe</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left mt-28">
           <h1 className="text-5xl font-bold">Login now!</h1>

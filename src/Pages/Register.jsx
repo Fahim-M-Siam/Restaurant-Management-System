@@ -9,6 +9,7 @@ import SocialLogin from "../Components/SocialLogin/SocialLogin";
 import useAuth from "../Hooks/useAuth";
 import Lottie from "lottie-react";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 const Register = () => {
   const { createUser, logOut } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
@@ -66,6 +67,11 @@ const Register = () => {
   };
   return (
     <div className="hero min-h-screen bg-orange-50">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Register | TasteHarmony Cafe</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left mt-28">
           <h1 className="text-5xl font-bold">Register Now!</h1>

@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import Lottie from "lottie-react";
 import { useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const AllFoodItems = () => {
   const [originalFoodItems, setOriginalFoodItems] = useState([]);
@@ -59,6 +60,11 @@ const AllFoodItems = () => {
 
   return (
     <Container>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>All Food Items | TasteHarmony Cafe</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       {isLoading ? (
         <div className="w-[400px] flex ml-96 items-center h-screen">
           <Lottie animationData={loadingAnimation}></Lottie>
