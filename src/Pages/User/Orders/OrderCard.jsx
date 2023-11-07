@@ -3,6 +3,8 @@ import propTypes from "prop-types";
 import { AiFillDelete } from "react-icons/ai";
 const OrderCard = ({ order }) => {
   const { image, foodName, price, buyerName, buyingDate } = order;
+
+  // const handleDelete
   return (
     <tr>
       <th>
@@ -23,7 +25,9 @@ const OrderCard = ({ order }) => {
       <td>{buyingDate}</td>
       <td>{buyerName}</td>
       <th>
-        <AiFillDelete className="text-2xl ml-6">Delete</AiFillDelete>
+        <button>
+          <AiFillDelete className="text-2xl ml-6">Delete</AiFillDelete>
+        </button>
       </th>
     </tr>
   );
@@ -33,3 +37,4 @@ OrderCard.propTypes = {
 };
 
 export default OrderCard;
+// onClick={() => handleDelete(_id)}

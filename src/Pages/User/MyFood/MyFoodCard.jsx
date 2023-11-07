@@ -1,8 +1,9 @@
 // @ts-nocheck
 import propTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const MyFoodCard = ({ foodItem }) => {
-  const { image, foodName, price, shortDescription } = foodItem;
+  const { _id, image, foodName, price, shortDescription } = foodItem;
   return (
     <div className="w-96 h-[450px] bg-base-100 shadow-xl hover:scale-105 transform transition-transform">
       <figure>
@@ -16,8 +17,12 @@ const MyFoodCard = ({ foodItem }) => {
         <p>{shortDescription}</p>
         <p className="font-medium">${price}</p>
         <div className="card-actions justify-start pt-4">
-          <div className="btn btn-sm btn-outline bg-[#C59D5F] text-white">
-            Update
+          <div>
+            <Link to={`updateFoodItem/${_id}`}>
+              <button className="btn btn-sm btn-outline bg-[#C59D5F] text-white">
+                Update
+              </button>
+            </Link>
           </div>
         </div>
       </div>

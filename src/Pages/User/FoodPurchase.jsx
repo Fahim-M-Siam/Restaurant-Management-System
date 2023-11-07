@@ -14,6 +14,7 @@ const FoodPurchase = () => {
 
   const handleorderFood = (event) => {
     event.preventDefault();
+    const toastId = toast.loading("Your order is processing..");
     const form = event.target;
     // inputvalues
     const foodName = form.foodName.value;
@@ -38,9 +39,9 @@ const FoodPurchase = () => {
       .then((data) => {
         console.log(data?.data?.acknowledged);
         if (data?.data?.acknowledged) {
-          toast.success("Successfully Added the Food Item");
+          toast.success("Successfully Added the Food Item", { id: toastId });
         } else {
-          toast.error(data?.data?.message);
+          toast.error(data?.data?.message, { id: toastId });
         }
       })
       .catch((error) => console.log(error?.message));

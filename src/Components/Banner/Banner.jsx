@@ -24,9 +24,10 @@ const Banner = () => {
                 atmosphere, we are dedicated to creating moments of gastronomic
                 delight that will linger in your memory.
               </p>
-              <Link to="/register">
+
+              <Link to="/allfooditems">
                 <button className="btn btn-outline bg-[#C59D5F] text-white">
-                  Register Now
+                  See All Foods
                 </button>
               </Link>
             </div>
