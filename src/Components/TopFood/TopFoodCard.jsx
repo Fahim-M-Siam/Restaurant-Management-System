@@ -1,30 +1,32 @@
 // @ts-nocheck
-const TopFoodCard = () => {
+import propTypes from "prop-types";
+import { Link } from "react-router-dom";
+const TopFoodCard = (topFoodItem) => {
+  const { foodName, image, category, price } = topFoodItem.topFoodItem;
+
   return (
-    <div className="w-72 h-[400px] bg-base-100 shadow-xl hover:scale-105 transform transition-transform">
+    <div className="w-[350px] h-[470px] bg-base-100 shadow-xl hover:scale-105 transform transition-transform">
       <figure>
-        <img
-          className="w-full"
-          src="https://i.ibb.co/k5HhTJ3/addFood.jpg"
-          alt="Shoes"
-        />
+        <img className="w-full h-[250px]" src={image} alt="Shoes" />
       </figure>
       <div className="card-body items-center text-center space-y-3">
-        <h2 className="card-title">
-          Steak
-          <div className="badge badge-secondary">Heavy Meal</div>
-        </h2>
+        <h2 className="card-title">{foodName}</h2>
 
-        <p className="font-medium">$450.00</p>
+        <p className="font-medium">${price}</p>
         <div className="card-actions justify-start">
-          <div className="badge badge-outline">Category</div>
+          <div className="badge badge-outline">{category}</div>
         </div>
-        <button className="btn btn-outline bg-[#C59D5F] btn-sm text-white">
-          Details
-        </button>
+        <Link to={`/food/${foodName}`}>
+          <button className="btn btn-outline bg-[#C59D5F] btn-sm text-white">
+            Details
+          </button>
+        </Link>
       </div>
     </div>
   );
+};
+TopFoodCard.propTypes = {
+  topFoodItem: propTypes.object,
 };
 
 export default TopFoodCard;
