@@ -10,7 +10,7 @@ import { useLoaderData } from "react-router-dom";
 const FoodPurchase = () => {
   const foodItem = useLoaderData();
   const { currentUser } = useAuth();
-  const { foodName, price } = foodItem;
+  const { foodName, price, image } = foodItem;
 
   const handleorderFood = (event) => {
     event.preventDefault();
@@ -24,6 +24,7 @@ const FoodPurchase = () => {
     const buyingDate = new Date();
 
     const orderedFood = {
+      image,
       foodName,
       price,
       quantity,
@@ -31,7 +32,6 @@ const FoodPurchase = () => {
       buyerEmail,
       buyingDate,
     };
-    console.log(orderedFood);
 
     axios
       .post("http://localhost:5000/orderItems", orderedFood)
@@ -48,9 +48,6 @@ const FoodPurchase = () => {
       .put("http://localhost:5000/orderItem", orderedFood)
       .then((data) => {
         console.log(data);
-        if (data?.data?.modifiedCount > 0) {
-          toast.success("Modified");
-        }
       })
       .catch((error) => console.log(error?.message));
   };

@@ -1,7 +1,7 @@
 // @ts-nocheck
 const TopFoodCard = () => {
   return (
-    <div className="w-72 h-[400px] bg-base-100 shadow-xl">
+    <div className="w-72 h-[400px] bg-base-100 shadow-xl hover:scale-105 transform transition-transform">
       <figure>
         <img
           className="w-full"

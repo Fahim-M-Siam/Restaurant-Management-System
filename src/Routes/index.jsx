@@ -43,15 +43,27 @@ const router = createBrowserRouter([
       },
       {
         path: "/user/addedfooditems",
-        element: <Myfoods></Myfoods>,
+        element: (
+          <PrivateRoute>
+            <Myfoods></Myfoods>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/user/addfood",
-        element: <AddFood></AddFood>,
+        element: (
+          <PrivateRoute>
+            <AddFood></AddFood>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/user/orders",
-        element: <Orders></Orders>,
+        element: (
+          <PrivateRoute>
+            <Orders></Orders>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/user/FoodOrder/:foodName",
