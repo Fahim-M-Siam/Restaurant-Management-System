@@ -83,7 +83,11 @@ const router = createBrowserRouter([
       },
       {
         path: "updateFoodItem/:name",
-        element: <UpdateFoodItem></UpdateFoodItem>,
+        element: (
+          <PrivateRoute>
+            <UpdateFoodItem></UpdateFoodItem>
+          </PrivateRoute>
+        ),
       },
     ],
   },

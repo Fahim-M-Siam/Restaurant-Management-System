@@ -1,8 +1,13 @@
-# React + Vite
+# Project Name - TasteHarmony Cafe (Assignment_Category_0005)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Live Link:
 
-Currently, two official plugins are available:
+# Features about my project:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- I have Applied Crud Operation in this project.
+- There is a dynamic counting happening in back end for orders and top 6 selling foods.
+- I have applied a search funcionality in this project on all food items page.
+- I have also applied pagination in this project.
+- Used firebase for authentications.
+- I have also explored packgages like react helmet and applied on my project.
+- I have added cool and fun gif's in my project to make it more interesting and eyecathing.
