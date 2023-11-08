@@ -18,7 +18,7 @@ const MyFoodCard = ({ foodItem }) => {
         <p className="font-medium">${price}</p>
         <div className="card-actions justify-start pt-4">
           <div>
-            <Link to={`updateFoodItem/${_id}`}>
+            <Link to={`../updateFoodItem/${_id}`}>
               <button className="btn btn-sm btn-outline bg-[#C59D5F] text-white">
                 Update
               </button>

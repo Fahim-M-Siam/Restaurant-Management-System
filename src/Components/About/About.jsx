@@ -3,7 +3,7 @@ const About = () => {
   return (
     <div>
       <section className="mt-20">
-        <div className="max-w-[1250px] mx-auto mb-20">
+        <div className="max-w-7xl mx-auto mb-20">
           <h2 className="text-3xl mb-5 text-center font-dancing">
             About TasteHarmony Cafe
           </h2>

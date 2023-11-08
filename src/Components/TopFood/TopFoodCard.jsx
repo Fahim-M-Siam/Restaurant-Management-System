@@ -1,11 +1,16 @@
 // @ts-nocheck
 import propTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 const TopFoodCard = (topFoodItem) => {
   const { foodName, image, category, price } = topFoodItem.topFoodItem;
 
   return (
-    <div className="w-[350px] h-[470px] bg-base-100 shadow-xl hover:scale-105 transform transition-transform">
+    <motion.div
+      layout
+      style={{ borderRadius: 20 }}
+      className="w-[350px] h-[470px] bg-base-100 shadow-xl hover:scale-105 transform transition-transform"
+    >
       <figure>
         <img className="w-full h-[250px]" src={image} alt="Shoes" />
       </figure>
@@ -22,7 +27,7 @@ const TopFoodCard = (topFoodItem) => {
           </button>
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 };
 TopFoodCard.propTypes = {

@@ -11,7 +11,7 @@ const Banner = () => {
   return (
     <div className="hero h-[600px] banner">
       <div className="overlay">
-        <Container>
+        <div className="max-w-7xl mx-auto">
           <div className="hero-content text-center flex flex-col md:flex-row lg:flex-row justify-between">
             <div className="max-w-full flex-1">
               <h1 className="font-dancing text-3xl font-bold text-white mt-16">
@@ -35,7 +35,7 @@ const Banner = () => {
               <Lottie animationData={bannerAnimation}></Lottie>
             </div>
           </div>
-        </Container>
+        </div>
       </div>
     </div>
   );

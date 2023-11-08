@@ -1,5 +1,4 @@
 // @ts-nocheck
-import Container from "../UI/Container";
 import "../Rating/Rating.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -19,7 +18,7 @@ const Rating = () => {
   return (
     <div className="hero h-[800px] ratingbg">
       <div className="overlay">
-        <Container>
+        <div className="max-w-7xl mx-auto">
           <div className="text-white text-center mt-36 font-dancing my-4">
             <h3 className="text-3xl text-[#C59D5F]">People Talk</h3>
             <h2 className="text-5xl">Our Guestbook</h2>
@@ -321,7 +320,7 @@ const Rating = () => {
               </Slider>
             </div>
           </div>
-        </Container>
+        </div>
       </div>
     </div>
   );

@@ -4,7 +4,6 @@ import About from "../Components/About/About";
 import Banner from "../Components/Banner/Banner";
 import Rating from "../Components/Rating/Rating";
 import TopFood from "../Components/TopFood/TopFood";
-import Container from "../Components/UI/Container";
 
 // @ts-nocheck
 const Home = () => {
@@ -16,9 +15,9 @@ const Home = () => {
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       <Banner></Banner>
-      <Container>
+      <div className="max-w-7xl mx-auto">
         <TopFood></TopFood>
-      </Container>
+      </div>
       <Rating></Rating>
       <About></About>
     </div>
