@@ -26,7 +26,7 @@ const Rating = () => {
           <div className="mt-20">
             <div>
               <Slider {...settings}>
-                <div className="card h-[400px] bg-[#FFFFFF] text-neutral-content">
+                <div className="card h-[400px]  text-neutral-content">
                   <div className="card-body items-center text-center space-y-5">
                     <div>
                       <div className="rating">
@@ -58,7 +58,7 @@ const Rating = () => {
                         />
                       </div>
                     </div>
-                    <p className="text-[#333C4D]">
+                    <p className="text-white">
                       Exceptional dining experience! The food at TasteHarmony
                       Cafe is a culinary masterpiece. Every dish is a work of
                       art, and the flavors are simply outstanding. We will
@@ -76,7 +76,7 @@ const Rating = () => {
                     </div>
                   </div>
                 </div>
-                <div className="card h-[400px] bg-[#FFFFFF] text-neutral-content">
+                <div className="card h-[400px]  text-neutral-content">
                   <div className="card-body items-center text-center space-y-5">
                     <div>
                       <div className="rating">
@@ -108,7 +108,7 @@ const Rating = () => {
                         />
                       </div>
                     </div>
-                    <p className="text-[#333C4D]">
+                    <p className="text-white">
                       What a gem! TasteHarmony Cafe offers an unforgettable
                       journey of tastes. The atmosphere is cozy, the staff is
                       welcoming, and the dishes are mouthwatering. A must-visit
@@ -124,7 +124,7 @@ const Rating = () => {
                     </div>
                   </div>
                 </div>
-                <div className="card h-[400px] bg-[#FFFFFF] text-neutral-content">
+                <div className="card h-[400px]  text-neutral-content">
                   <div className="card-body items-center text-center space-y-5">
                     <div>
                       <div className="rating">
@@ -156,7 +156,7 @@ const Rating = () => {
                         />
                       </div>
                     </div>
-                    <p className="text-[#333C4D]">
+                    <p className="text-white">
                       I cannot get enough of TasteHarmony Cafe! The menu is
                       diverse, and every bite is a burst of flavor. The service
                       is top-notch, and the ambiance is perfect for any
@@ -172,7 +172,7 @@ const Rating = () => {
                     </div>
                   </div>
                 </div>
-                <div className="card h-[400px] bg-[#FFFFFF] text-neutral-content">
+                <div className="card h-[400px]  text-neutral-content">
                   <div className="card-body items-center text-center space-y-5">
                     <div>
                       <div className="rating">
@@ -204,7 +204,7 @@ const Rating = () => {
                         />
                       </div>
                     </div>
-                    <p className="text-[#333C4D]">
+                    <p className="text-white">
                       A hidden treasure! TasteHarmony Cafe exceeded all our
                       expectations. The attention to detail in every dish is
                       remarkable. It is the kind of place where you savor every
@@ -220,7 +220,7 @@ const Rating = () => {
                     </div>
                   </div>
                 </div>
-                <div className="card h-[400px] bg-[#FFFFFF] text-neutral-content">
+                <div className="card h-[400px]  text-neutral-content">
                   <div className="card-body items-center text-center space-y-5">
                     <div>
                       <div className="rating">
@@ -252,7 +252,7 @@ const Rating = () => {
                         />
                       </div>
                     </div>
-                    <p className="text-[#333C4D]">
+                    <p className="text-white">
                       An unforgettable evening at TasteHarmony Cafe. The
                       presentation, taste, and quality of the food are
                       unmatched. The staffs knowledge and passion for food shine
@@ -268,7 +268,7 @@ const Rating = () => {
                     </div>
                   </div>
                 </div>
-                <div className="card h-[400px] bg-[#FFFFFF] text-neutral-content">
+                <div className="card h-[400px]  text-neutral-content">
                   <div className="card-body items-center text-center space-y-5">
                     <div>
                       <div className="rating">
@@ -300,7 +300,7 @@ const Rating = () => {
                         />
                       </div>
                     </div>
-                    <p className="text-[#333C4D]">
+                    <p className="text-white">
                       We celebrated our special occasion at TasteHarmony Cafe,
                       and it was magical. The restaurants ambiance, the
                       impeccable service, and the exquisite menu made it an
