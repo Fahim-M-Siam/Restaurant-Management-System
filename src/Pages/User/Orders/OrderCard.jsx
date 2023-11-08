@@ -1,10 +1,44 @@
+/* eslint-disable react/prop-types */
 // @ts-nocheck
 import propTypes from "prop-types";
 import { AiFillDelete } from "react-icons/ai";
-const OrderCard = ({ order }) => {
-  const { image, foodName, price, buyerName, buyingDate } = order;
+import Swal from "sweetalert2";
 
-  // const handleDelete
+const OrderCard = ({ order, orders, setOrders }) => {
+  const { _id, image, foodName, price, buyerName, buyingDate } = order;
+
+  const handleDelete = (_id) => {
+    console.log(_id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/deleteFood/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your order has been deleted.",
+                icon: "success",
+              });
+              const remainingOrders = orders.filter(
+                (foodOrder) => foodOrder._id !== _id
+              );
+              setOrders(remainingOrders);
+            }
+          });
+      }
+    });
+  };
   return (
     <tr>
       <th>
@@ -25,8 +59,8 @@ const OrderCard = ({ order }) => {
       <td>{buyingDate}</td>
       <td>{buyerName}</td>
       <th>
-        <button>
-          <AiFillDelete className="text-2xl ml-6">Delete</AiFillDelete>
+        <button onClick={() => handleDelete(_id)}>
+          <AiFillDelete className="text-2xl ml-6"></AiFillDelete>
         </button>
       </th>
     </tr>
@@ -37,4 +71,3 @@ OrderCard.propTypes = {
 };
 
 export default OrderCard;
-// onClick={() => handleDelete(_id)}

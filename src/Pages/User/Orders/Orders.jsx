@@ -34,7 +34,12 @@ const Orders = () => {
             </thead>
             <tbody>
               {orders?.map((order) => (
-                <OrderCard key={order._id} order={order}></OrderCard>
+                <OrderCard
+                  key={order._id}
+                  order={order}
+                  orders={orders}
+                  setOrders={setOrders}
+                ></OrderCard>
               ))}
             </tbody>
           </table>
