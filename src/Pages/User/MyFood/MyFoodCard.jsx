@@ -3,7 +3,7 @@ import propTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const MyFoodCard = ({ foodItem }) => {
-  const { _id, image, foodName, price, shortDescription } = foodItem;
+  const { _id, image, foodName, category, price, shortDescription } = foodItem;
   return (
     <div className="w-96 h-[450px] bg-base-100 shadow-xl hover:scale-105 transform transition-transform">
       <figure>
@@ -11,8 +11,8 @@ const MyFoodCard = ({ foodItem }) => {
       </figure>
       <div className="card-body">
         <h2 className="card-title">
-          Steak
-          <div className="badge badge-secondary">{foodName}</div>
+          {foodName}
+          <div className="badge badge-secondary">{category}</div>
         </h2>
         <p>{shortDescription}</p>
         <p className="font-medium">${price}</p>

@@ -5,11 +5,13 @@ import Lottie from "lottie-react";
 
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const UpdateFoodItem = () => {
   const [foodItem, setFoodItem] = useState([]);
   const { currentUser, setIsLoading } = useAuth();
   const { name } = useParams();
+  console.log(name);
   useEffect(() => {
     axios
       .get(`http://localhost:5000/fooditems/${name}`)
@@ -31,13 +33,13 @@ const UpdateFoodItem = () => {
     shortDescription,
     description,
   } = foodItem;
-  console.log(foodItem);
+  console.log(foodName);
   const handleUpdateFood = (event) => {
     event.preventDefault();
     // const toastId = toast.loading("Processing..");
     const form = event.target;
     // inputvalues
-    const foodName = form.foodName.value.toLowerCase();
+    const foodName = form.foodName.value;
     const image = form.image.value;
     const category = form.category.value.toLowerCase();
     const quantity = parseInt(form.quantity.value);
@@ -57,10 +59,27 @@ const UpdateFoodItem = () => {
       userName,
       userEmail,
       country,
-      count: 0,
       shortDescription,
       description,
     };
+
+    fetch(`http://localhost:5000/fooditems/${name}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedFoodItem),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            title: "Updated!",
+            text: "Your foodItem has been updated.",
+            icon: "success",
+          });
+        }
+      });
   };
   return (
     <div className="hero min-h-screen bg-[url('https://i.ibb.co/F8XHtrZ/update.jpg')]">
@@ -212,7 +231,7 @@ const UpdateFoodItem = () => {
             </div>
             <div className="form-control mt-6">
               <button type="submit" className="btn btn-outline bg-[#C59D5F]">
-                Add Food Item
+                Update Item
               </button>
             </div>
           </form>
