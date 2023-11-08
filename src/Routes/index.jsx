@@ -28,7 +28,8 @@ const router = createBrowserRouter([
       {
         path: "allfooditems",
         element: <AllFoodItems></AllFoodItems>,
-        loader: () => fetch("http://localhost:5000/foodItemsCount"),
+        loader: () =>
+          fetch("https://taste-harmony-cafe-server.vercel.app/foodItemsCount"),
       },
       {
         path: "blog",
@@ -70,7 +71,9 @@ const router = createBrowserRouter([
         path: "/user/FoodOrder/:foodName",
         element: <FoodPurchase></FoodPurchase>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/fooditem/${params.foodName}`),
+          fetch(
+            `https://taste-harmony-cafe-server.vercel.app/fooditem/${params.foodName}`
+          ),
       },
       {
         path: "/food/:foodName",
@@ -79,7 +82,8 @@ const router = createBrowserRouter([
             <FoodDetails></FoodDetails>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/fooditems"),
+        loader: () =>
+          fetch("https://taste-harmony-cafe-server.vercel.app/fooditems"),
       },
       {
         path: "updateFoodItem/:name",

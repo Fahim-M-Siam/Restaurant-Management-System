@@ -15,7 +15,7 @@ const TopFood = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/topfooditems")
+      .get("https://taste-harmony-cafe-server.vercel.app/topfooditems")
       .then((response) => setTopFoodItems(response.data))
       .catch((error) => console.log(error))
       .finally(() => {

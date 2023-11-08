@@ -39,7 +39,7 @@ const AddFood = () => {
     };
 
     axios
-      .post("http://localhost:5000/addFood", newFoodItem)
+      .post("https://taste-harmony-cafe-server.vercel.app/addFood", newFoodItem)
       .then((res) => {
         const data = res.data;
         if (data.insertedId) {

@@ -35,7 +35,10 @@ const FoodPurchase = () => {
     };
 
     axios
-      .post("http://localhost:5000/orderItems", orderedFood)
+      .post(
+        "https://taste-harmony-cafe-server.vercel.app/orderItems",
+        orderedFood
+      )
       .then((data) => {
         console.log(data?.data?.acknowledged);
         if (data?.data?.acknowledged) {
@@ -46,7 +49,10 @@ const FoodPurchase = () => {
       })
       .catch((error) => console.log(error?.message));
     axios
-      .put("http://localhost:5000/orderItem", orderedFood)
+      .put(
+        "https://taste-harmony-cafe-server.vercel.app/orderItem",
+        orderedFood
+      )
       .then((data) => {
         console.log(data);
       })

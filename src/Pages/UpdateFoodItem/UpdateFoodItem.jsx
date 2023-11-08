@@ -14,7 +14,7 @@ const UpdateFoodItem = () => {
   console.log(name);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/fooditems/${name}`)
+      .get(`https://taste-harmony-cafe-server.vercel.app/fooditems/${name}`)
       .then((response) => setFoodItem(response.data))
       .catch((error) => console.log(error))
       .finally(() => {
@@ -63,7 +63,7 @@ const UpdateFoodItem = () => {
       description,
     };
 
-    fetch(`http://localhost:5000/fooditems/${name}`, {
+    fetch(`https://taste-harmony-cafe-server.vercel.app/fooditems/${name}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

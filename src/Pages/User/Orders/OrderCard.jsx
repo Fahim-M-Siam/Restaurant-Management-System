@@ -19,9 +19,12 @@ const OrderCard = ({ order, orders, setOrders }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/deleteFood/${_id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://taste-harmony-cafe-server.vercel.app/deleteFood/${_id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {

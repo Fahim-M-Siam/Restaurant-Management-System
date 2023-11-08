@@ -7,7 +7,7 @@ import OrderCard from "./OrderCard";
 const Orders = () => {
   const { currentUser } = useAuth();
   const [orders, setOrders] = useState([]);
-  const url = `http://localhost:5000/user/orders?email=${currentUser.email}`;
+  const url = `https://taste-harmony-cafe-server.vercel.app/user/orders?email=${currentUser.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())

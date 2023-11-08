@@ -7,7 +7,7 @@ import useAuth from "../../../Hooks/useAuth";
 const Myfoods = () => {
   const { currentUser } = useAuth();
   const [foodItems, setFoodItems] = useState([]);
-  const url = `http://localhost:5000/user/addedfooditems?email=${currentUser.email}`;
+  const url = `https://taste-harmony-cafe-server.vercel.app/user/addedfooditems?email=${currentUser.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())

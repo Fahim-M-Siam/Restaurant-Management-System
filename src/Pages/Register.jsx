@@ -57,7 +57,7 @@ const Register = () => {
 
     // sendin user information to backend
     axios
-      .post("http://localhost:5000/users", user)
+      .post("https://taste-harmony-cafe-server.vercel.app/users", user)
       .then((response) => {
         console.log(response.data);
       })

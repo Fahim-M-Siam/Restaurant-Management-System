@@ -23,7 +23,7 @@ const AllFoodItems = () => {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:5000/fooditems?page=${currentPage}&size=${foodItemsPerPage}`
+        `https://taste-harmony-cafe-server.vercel.app/fooditems?page=${currentPage}&size=${foodItemsPerPage}`
       )
       .then((response) => {
         setOriginalFoodItems(response.data);
