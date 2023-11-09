@@ -90,7 +90,7 @@ const Login = () => {
               />
               <span
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute left-[13.25rem] lg:left-[18rem] top-[3.2rem]"
+                className="absolute left-[17.25rem] lg:left-[18rem] top-[3.2rem]"
               >
                 {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
               </span>

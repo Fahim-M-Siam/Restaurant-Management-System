@@ -91,7 +91,7 @@ const AllFoodItems = () => {
               Search
             </button>
           </div>
-          <div className="my-20 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="my-20 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {foodItems?.map((foodItem) => (
               <FoodCard key={foodItem._id} foodItem={foodItem}></FoodCard>
             ))}
